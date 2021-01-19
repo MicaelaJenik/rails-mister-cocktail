@@ -1,0 +1,18 @@
+<div class="container">
+  <h1><%= @cocktail.name %></h1>
+  <div class="card-columns">
+    <% @cocktail.doses.each do |dose| %>
+    <div class="card">
+      <img class="card-img-top" src="http://1.bp.blogspot.com/-KTuq7BqYEwQ/U9cL6ZgUfoI/AAAAAAAAALw/2i08BCHkzXE/s1600/caipiroska.jpg" alt="Card image cap">
+      <div class="card-body">
+        <ul>
+          <li><%= dose.description %> <%= dose.ingredient.name %></li>
+        </ul>
+        <p class="card-text"><%= link_to "Delete dose", cocktail_doses_path(dose), method: :delete %></p>
+      </div>
+    </div>
+    <% end %>
+    <p class="card-text"><small class="text-muted"><%= link_to "Add new dose", cocktail_doses_new_path(@cocktail) %></small></p>
+    <p class="card-text"><small class="text-muted"><%= link_to "Go back to cocktails", cocktails_path %></small></p>
+  </div>
+</div>

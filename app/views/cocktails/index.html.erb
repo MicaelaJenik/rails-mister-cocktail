@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1>Our cocktails</h1>
+
+  <div class="card-columns">
+    <%= @cocktails.each do |cocktail| %>
+      <div class="card">
+        <img class="card-img-top" src="http://1.bp.blogspot.com/-KTuq7BqYEwQ/U9cL6ZgUfoI/AAAAAAAAALw/2i08BCHkzXE/s1600/caipiroska.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name %></h5>
+          <p class="card-text"><%= link_to 'View cocktail', cocktail_path(cocktail) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <p class="card-text"><small class="text-muted"><%= link_to 'Add new cocktail', new_cocktail_path %></small></p>
+  <p></p>
+</div>
